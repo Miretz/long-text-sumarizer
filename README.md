@@ -1,5 +1,6 @@
 # long-text-sumarizer
-ML tool to summarize long text
+Machine learning tool to summarize long text.
+Based on the sumy library.
 
 #Install requirements via pip
 ```
