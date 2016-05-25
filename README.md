@@ -3,8 +3,15 @@ Machine learning tool to summarize long text.
 Based on the sumy library.
 
 #Install requirements via pip
+
 ```
 pip install -r requirements.txt
+```
+
+Download NLTK tokenizers by following command:
+
+```
+python -c "import nltk; nltk.download('punkt')"
 ```
 
 #Run
