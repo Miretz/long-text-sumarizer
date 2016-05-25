@@ -36,14 +36,10 @@ def analyze_pdf_file(file):
     tempfile="temp.txt"
     print("Extracting PDF text to file %s" % tempfile)
     pdf_file = PdfFileReader(open(file, "rb"))
-    num_pages = pdf_file.getNumPages()
     data = ""
-    for i in range(0, num_pages):
-        line = pdf_file.getPage(i).extractText() + u"\n"
-        data += line.encode("ascii","ignore")
+    for i in range(0, pdf_file.getNumPages()):
+        data += pdf_file.getPage(i).extractText() + u"\n"
     data = u" ".join(data.replace(u"\xa0", " ").strip().split())
-    print(type(data))
-    print(data)
     f = open(tempfile,'w')
     f.write(data.encode("ascii", "ignore"))
     f.close()
